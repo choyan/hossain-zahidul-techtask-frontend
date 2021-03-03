@@ -3,7 +3,7 @@ export default function CurrentIngredientList({
   removeFromCurrentIngredients,
 }) {
   return (
-    <div className='my-4'>
+    <div className="my-4">
       {currentIngredients.length > 0 &&
         currentIngredients.map((ingredient) => (
           <span
@@ -18,7 +18,7 @@ export default function CurrentIngredientList({
             >
               <span className="sr-only">Remove Ingredient</span>
               <svg className="h-2 w-2" stroke="currentColor" fill="none" viewBox="0 0 8 8">
-                <path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7" />
+                <path strokeLinecap="round" strokeWidth="1.5" d="M1 1l6 6m0-6L1 7" />
               </svg>
             </button>
           </span>

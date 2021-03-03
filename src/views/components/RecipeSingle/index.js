@@ -1,5 +1,4 @@
 export default function RecipeSinlge({ recipe }) {
-  console.log(recipe);
   return (
     <div className="mb-4">
       <div className="relative rounded-lg border border-gray-300 bg-white px-6 py-2.5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">

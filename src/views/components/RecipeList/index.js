@@ -7,8 +7,8 @@ export default function RecipeList({ loading, recipes }) {
       {loading
         ? 'loading'
         : recipes.map((recipe) => {
-          return <RecipeSingle recipe={recipe} />;
-        })}
+            return <RecipeSingle recipe={recipe} />;
+          })}
     </div>
   );
 }
