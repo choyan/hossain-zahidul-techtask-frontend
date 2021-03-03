@@ -11,7 +11,12 @@ export default function App() {
 
   const changeDate = (e) => setDate(formatDate(new Date(e.target.value)));
 
-  const addToCurrentIngredients = (e) => setCurrentIngredients(currentIngredients => [...currentIngredients, e.target.value]);
+  const addToCurrentIngredients = (e) => {
+    const exist = currentIngredients.find(item => item === e.target.value)
+    if (!exist) {
+      setCurrentIngredients(currentIngredients => [...currentIngredients, e.target.value])
+    }
+  };
 
   const removeFromCurrentIngredients = (item) => {
     setCurrentIngredients(currentIngredients => currentIngredients.filter((ingredient) => ingredient !== item));
