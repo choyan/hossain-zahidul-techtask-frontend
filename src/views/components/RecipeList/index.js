@@ -8,9 +8,17 @@ export default function RecipeList({ loading, recipes }) {
       {loading ? (
         <Loading />
       ) : (
-        recipes.map((recipe) => {
-          return <RecipeSingle recipe={recipe} />;
-        })
+        <>
+          {recipes.length === 0 ? (
+            <div>You search criteria didn't return any recipe.</div>
+          ) : (
+            <>
+              {recipes.map((recipe) => {
+                return <RecipeSingle recipe={recipe} key={recipe.title} />;
+              })}
+            </>
+          )}
+        </>
       )}
     </div>
   );

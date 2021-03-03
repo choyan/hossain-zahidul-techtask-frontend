@@ -117,7 +117,7 @@ export default function App() {
                           ))}
                         </select>
                       ) : (
-                        <span className="text-sm">Could not find any Ingredients</span>
+                        <span className="text-sm">Could not find any Ingredient.</span>
                       )}
                       </>
                   )
