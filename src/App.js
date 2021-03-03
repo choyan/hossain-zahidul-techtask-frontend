@@ -13,8 +13,8 @@ export default function App() {
 
   const addToCurrentIngredients = (e) => setCurrentIngredients(currentIngredients => [...currentIngredients, e.target.value]);
 
-  const removeFromCurrentIngredients = (index) => {
-    console.log(index);
+  const removeFromCurrentIngredients = (item) => {
+    setCurrentIngredients(currentIngredients => currentIngredients.filter((ingredient) => ingredient !== item));
   }
 
   const compareDate = (useBy) => {
@@ -97,7 +97,21 @@ export default function App() {
               )}
           </div>
 
-          
+          {
+            currentIngredients.length > 0 && (
+              currentIngredients.map((ingredient, index) => (
+                <span class="inline-flex rounded-full items-center py-0.5 pl-2.5 pr-1 text-sm font-medium bg-indigo-100 text-indigo-700">
+                  {ingredient}
+                  <button type="button" onClick={() => removeFromCurrentIngredients(ingredient)} class="flex-shrink-0 ml-0.5 h-4 w-4 rounded-full inline-flex items-center justify-center text-indigo-400 hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-indigo-500 focus:text-white">
+                    <span class="sr-only">Remove Ingredient</span>
+                    <svg class="h-2 w-2" stroke="currentColor" fill="none" viewBox="0 0 8 8">
+                      <path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7" />
+                    </svg>
+                  </button>
+                </span>
+              ))
+            )
+          }
 
           <div className="px-4 py-2.5 bg-indigo-500" onClick={getRecipes}>Search</div>
 
