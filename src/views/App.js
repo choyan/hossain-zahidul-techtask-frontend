@@ -60,10 +60,10 @@ export default function App() {
 
   return (
     <div className="container mx-auto">
-      <div className="w-2/3 mx-auto my-16">
+      <div className="w-3/4 md:w-2/3 mx-auto my-8 md:my-16">
         <div className="bg-white px-4 py-6 shadow overflow-hidden sm:rounded-lg">
           <div className="grid grid-cols-2 gap-4">
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <div className="my-4">
                 <h3 className="text-xl leading-6 font-medium text-gray-900">Search Criteria</h3>
               </div>
@@ -136,7 +136,7 @@ export default function App() {
               </button>
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <RecipeList recipes={recipes} loading={recipeLoading} />
             </div>
           </div>
