@@ -3,7 +3,7 @@ import { getIngredients } from 'services/ingredients';
 import { getAllRecipies } from 'services/recipies';
 import { formatDate } from 'utils';
 import { CurrentIngredientsList, RecipeList } from './components';
-import { Loading } from '../shared';
+import { Loading } from 'shared';
 
 export default function App() {
   const [date, setDate] = useState(formatDate(new Date()));
@@ -29,10 +29,7 @@ export default function App() {
   };
 
   const compareDate = (useBy) => {
-    if (new Date(date).getTime() <= new Date(useBy).getTime()) {
-      return false;
-    }
-    return true;
+    return new Date(date).getTime() > new Date(useBy).getTime();
   };
 
   const getRecipes = () => {
@@ -68,7 +65,7 @@ export default function App() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <div className="my-4">
-                <h3 className="text-xl leading-6 font-medium text-gray-900">Search Criterias</h3>
+                <h3 className="text-xl leading-6 font-medium text-gray-900">Search Criteria</h3>
               </div>
 
               <div className="my-4">
